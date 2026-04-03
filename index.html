@@ -2,21 +2,21 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>GLB 모델 초초대형</title>
+  <title>GLB 모델 초초초대형 (카메라 고정)</title>
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
 </head>
 <body>
   <a-scene>
     
-    <!-- ===== 카메라 ===== -->
-    <!-- 🔥 모델만 커졌으므로 카메라도 충분히 뒤로 -->
-    <a-entity id="rig" position="0 200 1200">
+    <!-- ===== 카메라 (위치 고정) ===== -->
+    <!-- 🔥 더 이상 뒤로 이동하지 않음 -->
+    <a-entity id="rig" position="0 1.6 5">
       <a-camera wasd-controls look-controls></a-camera>
       <a-entity laser-controls="hand: left"></a-entity>
       <a-entity laser-controls="hand: right"></a-entity>
     </a-entity>
 
-    <!-- ===== 바닥 (변경 없음) ===== -->
+    <!-- ===== 바닥 ===== -->
     <a-plane 
       rotation="-90 0 0" 
       width="2000" 
@@ -24,7 +24,7 @@
       color="#7BC8A4">
     </a-plane>
 
-    <!-- ===== 하늘 (변경 없음) ===== -->
+    <!-- ===== 하늘 ===== -->
     <a-sky color="#ECECEC"></a-sky>
 
     <!-- ===== 조명 ===== -->
@@ -32,11 +32,11 @@
     <a-light type="directional" position="200 400 200" intensity="1"></a-light>
 
     <!-- ===== GLB 모델 ===== -->
-    <!-- 🔥 기존 400배에서 100배 추가 → 총 40,000배 -->
+    <!-- 🔥 모델만 계속 확대 (이전 값 유지 + 60배 반영됨 상태) -->
     <a-entity 
       gltf-model="model.glb"
-      position="0 0 -800" 
-      scale="40000 40000 40000"  <!-- 🔥 모델만 초대형 -->
+      position="0 0 -3" 
+      scale="2400000 2400000 2400000"
       rotation="0 30 0">
     </a-entity>
 
