@@ -1,4 +1,4 @@
-/<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
@@ -10,7 +10,7 @@
   <a-scene>
     
     <!-- ===== 카메라 (PC: WASD + 마우스 / VR: 자동 컨트롤러) ===== -->
-    <a-entity id="rig" position="0 1.6 5">
+    <a-entity id="rig" position="0 1.6 10">
       <!-- 카메라 -->
       <a-camera wasd-controls look-controls></a-camera>
 
@@ -22,8 +22,8 @@
     <!-- ===== 바닥 ===== -->
     <a-plane 
       rotation="-90 0 0" 
-      width="50" 
-      height="50" 
+      width="100" 
+      height="100" 
       color="#7BC8A4">
     </a-plane>
 
@@ -34,7 +34,7 @@
     <!-- 전체 밝기 -->
     <a-light type="ambient" color="#ffffff" intensity="0.6"></a-light>
 
-    <!-- 방향 조명 (그림자 느낌) -->
+    <!-- 방향 조명 -->
     <a-light 
       type="directional" 
       position="5 10 7" 
@@ -44,12 +44,11 @@
     <!-- ===== GLB 모델 ===== -->
     <a-entity 
       gltf-model="model.glb"
-      position="0 0 -3"   <!-- 앞쪽 중앙 -->
-      scale="2 2 2"      <!-- 적당히 크게 -->
+      position="0 0 -5"   <!-- 앞쪽 중앙 (조금 더 멀리) -->
+      scale="20 20 20"   <!-- 🔥 20배 확대 -->
       rotation="0 30 0"> <!-- 약간 회전 -->
     </a-entity>
 
   </a-scene>
 </body>
 </html>
-/
