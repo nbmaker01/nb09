@@ -1,2 +1,55 @@
-/
+/<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>GLB 모델 + 이동 (PC & VR)</title>
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+</head>
+<body>
+  <!-- A-Frame 씬 시작 -->
+  <a-scene>
+    
+    <!-- ===== 카메라 (PC: WASD + 마우스 / VR: 자동 컨트롤러) ===== -->
+    <a-entity id="rig" position="0 1.6 5">
+      <!-- 카메라 -->
+      <a-camera wasd-controls look-controls></a-camera>
+
+      <!-- VR 컨트롤러 (양손) -->
+      <a-entity laser-controls="hand: left"></a-entity>
+      <a-entity laser-controls="hand: right"></a-entity>
+    </a-entity>
+
+    <!-- ===== 바닥 ===== -->
+    <a-plane 
+      rotation="-90 0 0" 
+      width="50" 
+      height="50" 
+      color="#7BC8A4">
+    </a-plane>
+
+    <!-- ===== 하늘 ===== -->
+    <a-sky color="#ECECEC"></a-sky>
+
+    <!-- ===== 조명 ===== -->
+    <!-- 전체 밝기 -->
+    <a-light type="ambient" color="#ffffff" intensity="0.6"></a-light>
+
+    <!-- 방향 조명 (그림자 느낌) -->
+    <a-light 
+      type="directional" 
+      position="5 10 7" 
+      intensity="0.8">
+    </a-light>
+
+    <!-- ===== GLB 모델 ===== -->
+    <a-entity 
+      gltf-model="model.glb"
+      position="0 0 -3"   <!-- 앞쪽 중앙 -->
+      scale="2 2 2"      <!-- 적당히 크게 -->
+      rotation="0 30 0"> <!-- 약간 회전 -->
+    </a-entity>
+
+  </a-scene>
+</body>
+</html>
 /
