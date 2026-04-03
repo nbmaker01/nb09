@@ -9,12 +9,9 @@
   <!-- A-Frame 씬 시작 -->
   <a-scene>
     
-    <!-- ===== 카메라 (PC: WASD + 마우스 / VR: 자동 컨트롤러) ===== -->
-    <!-- 카메라를 모델 가까이 이동 -->
-    <a-entity id="rig" position="0 1.6 2">
+    <!-- ===== 카메라 (PC: WASD + 마우스 / VR: 컨트롤러) ===== -->
+    <a-entity id="rig" position="0 1.6 5">
       <a-camera wasd-controls look-controls></a-camera>
-
-      <!-- VR 컨트롤러 -->
       <a-entity laser-controls="hand: left"></a-entity>
       <a-entity laser-controls="hand: right"></a-entity>
     </a-entity>
@@ -22,8 +19,8 @@
     <!-- ===== 바닥 ===== -->
     <a-plane 
       rotation="-90 0 0" 
-      width="100" 
-      height="100" 
+      width="200" 
+      height="200" 
       color="#7BC8A4">
     </a-plane>
 
@@ -35,11 +32,12 @@
     <a-light type="directional" position="5 10 7" intensity="1"></a-light>
 
     <!-- ===== GLB 모델 ===== -->
+    <!-- 🔥 핵심: 모델 자체를 20배 크게 -->
     <a-entity 
       gltf-model="model.glb"
-      position="0 0 -1"    <!-- 카메라 바로 앞 -->
-      scale="20 20 20"    <!-- 20배 확대 유지 -->
-      rotation="0 30 0">
+      position="0 0 -3"     <!-- 앞쪽 중앙 -->
+      scale="20 20 20"     <!-- 🔥 모델만 20배 확대 -->
+      rotation="0 30 0">   <!-- 약간 회전 -->
     </a-entity>
 
   </a-scene>
