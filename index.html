@@ -2,15 +2,15 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>GLB 모델 + 이동 (PC & VR)</title>
+  <title>GLB 모델 크게 보기</title>
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
 </head>
 <body>
-  <!-- A-Frame 씬 시작 -->
   <a-scene>
     
-    <!-- ===== 카메라 (PC: WASD + 마우스 / VR: 컨트롤러) ===== -->
-    <a-entity id="rig" position="0 1.6 5">
+    <!-- ===== 카메라 ===== -->
+    <!-- 🔥 모델이 엄청 커지므로 카메라도 뒤로 크게 이동 -->
+    <a-entity id="rig" position="0 10 80">
       <a-camera wasd-controls look-controls></a-camera>
       <a-entity laser-controls="hand: left"></a-entity>
       <a-entity laser-controls="hand: right"></a-entity>
@@ -19,8 +19,8 @@
     <!-- ===== 바닥 ===== -->
     <a-plane 
       rotation="-90 0 0" 
-      width="200" 
-      height="200" 
+      width="500" 
+      height="500" 
       color="#7BC8A4">
     </a-plane>
 
@@ -28,16 +28,17 @@
     <a-sky color="#ECECEC"></a-sky>
 
     <!-- ===== 조명 ===== -->
-    <a-light type="ambient" color="#ffffff" intensity="1"></a-light>
-    <a-light type="directional" position="5 10 7" intensity="1"></a-light>
+    <a-light type="ambient" intensity="1"></a-light>
+    <a-light type="directional" position="50 100 50" intensity="1"></a-light>
 
     <!-- ===== GLB 모델 ===== -->
-    <!-- 🔥 핵심: 모델 자체를 20배 크게 -->
+    <!-- 🔥 진짜 핵심: 모델 자체를 20배 확대 -->
+    <!-- 🔥 그리고 너무 커져서 안 보이는 문제 방지 위해 위치를 멀리 배치 -->
     <a-entity 
       gltf-model="model.glb"
-      position="0 0 -3"     <!-- 앞쪽 중앙 -->
-      scale="20 20 20"     <!-- 🔥 모델만 20배 확대 -->
-      rotation="0 30 0">   <!-- 약간 회전 -->
+      position="0 0 -50"   <!-- 멀리 배치해서 전체 보이게 -->
+      scale="20 20 20"   <!-- 🔥 모델 20배 확대 -->
+      rotation="0 30 0">
     </a-entity>
 
   </a-scene>
