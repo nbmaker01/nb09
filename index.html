@@ -10,11 +10,11 @@
   <a-scene>
     
     <!-- ===== 카메라 (PC: WASD + 마우스 / VR: 자동 컨트롤러) ===== -->
-    <a-entity id="rig" position="0 1.6 10">
-      <!-- 카메라 -->
+    <!-- 카메라를 모델 가까이 이동 -->
+    <a-entity id="rig" position="0 1.6 2">
       <a-camera wasd-controls look-controls></a-camera>
 
-      <!-- VR 컨트롤러 (양손) -->
+      <!-- VR 컨트롤러 -->
       <a-entity laser-controls="hand: left"></a-entity>
       <a-entity laser-controls="hand: right"></a-entity>
     </a-entity>
@@ -31,22 +31,15 @@
     <a-sky color="#ECECEC"></a-sky>
 
     <!-- ===== 조명 ===== -->
-    <!-- 전체 밝기 -->
-    <a-light type="ambient" color="#ffffff" intensity="0.6"></a-light>
-
-    <!-- 방향 조명 -->
-    <a-light 
-      type="directional" 
-      position="5 10 7" 
-      intensity="0.8">
-    </a-light>
+    <a-light type="ambient" color="#ffffff" intensity="1"></a-light>
+    <a-light type="directional" position="5 10 7" intensity="1"></a-light>
 
     <!-- ===== GLB 모델 ===== -->
     <a-entity 
       gltf-model="model.glb"
-      position="0 0 -5"   <!-- 앞쪽 중앙 (조금 더 멀리) -->
-      scale="20 20 20"   <!-- 🔥 20배 확대 -->
-      rotation="0 30 0"> <!-- 약간 회전 -->
+      position="0 0 -1"    <!-- 카메라 바로 앞 -->
+      scale="20 20 20"    <!-- 20배 확대 유지 -->
+      rotation="0 30 0">
     </a-entity>
 
   </a-scene>
