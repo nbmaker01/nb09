@@ -2,15 +2,15 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>GLB 모델 크게 보기</title>
+  <title>GLB 모델 초대형 (20배 추가 확대)</title>
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
 </head>
 <body>
   <a-scene>
     
     <!-- ===== 카메라 ===== -->
-    <!-- 🔥 모델이 엄청 커지므로 카메라도 뒤로 크게 이동 -->
-    <a-entity id="rig" position="0 10 80">
+    <!-- 🔥 모델이 더 커졌으므로 훨씬 더 뒤로 이동 -->
+    <a-entity id="rig" position="0 50 300">
       <a-camera wasd-controls look-controls></a-camera>
       <a-entity laser-controls="hand: left"></a-entity>
       <a-entity laser-controls="hand: right"></a-entity>
@@ -19,8 +19,8 @@
     <!-- ===== 바닥 ===== -->
     <a-plane 
       rotation="-90 0 0" 
-      width="500" 
-      height="500" 
+      width="2000" 
+      height="2000" 
       color="#7BC8A4">
     </a-plane>
 
@@ -29,15 +29,14 @@
 
     <!-- ===== 조명 ===== -->
     <a-light type="ambient" intensity="1"></a-light>
-    <a-light type="directional" position="50 100 50" intensity="1"></a-light>
+    <a-light type="directional" position="200 400 200" intensity="1"></a-light>
 
     <!-- ===== GLB 모델 ===== -->
-    <!-- 🔥 진짜 핵심: 모델 자체를 20배 확대 -->
-    <!-- 🔥 그리고 너무 커져서 안 보이는 문제 방지 위해 위치를 멀리 배치 -->
+    <!-- 🔥 기존 20배에서 또 20배 → 총 400배 -->
     <a-entity 
       gltf-model="model.glb"
-      position="0 0 -50"   <!-- 멀리 배치해서 전체 보이게 -->
-      scale="20 20 20"   <!-- 🔥 모델 20배 확대 -->
+      position="0 0 -200" 
+      scale="400 400 400"  <!-- 🔥 20배 × 20배 = 400배 -->
       rotation="0 30 0">
     </a-entity>
 
