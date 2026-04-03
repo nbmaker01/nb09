@@ -2,15 +2,14 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>GLB 모델 초초초대형 (카메라 고정)</title>
+  <title>GLB 모델 초대형 + 카메라 이동</title>
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
 </head>
 <body>
   <a-scene>
     
-    <!-- ===== 카메라 (위치 고정) ===== -->
-    <!-- 🔥 더 이상 뒤로 이동하지 않음 -->
-    <a-entity id="rig" position="0 1.6 5">
+    <!-- ===== 카메라 (10만큼 위로, 10만큼 뒤로 이동) ===== -->
+    <a-entity id="rig" position="0 100001.6 100005">
       <a-camera wasd-controls look-controls></a-camera>
       <a-entity laser-controls="hand: left"></a-entity>
       <a-entity laser-controls="hand: right"></a-entity>
@@ -32,7 +31,7 @@
     <a-light type="directional" position="200 400 200" intensity="1"></a-light>
 
     <!-- ===== GLB 모델 ===== -->
-    <!-- 🔥 모델만 계속 확대 (이전 값 유지 + 60배 반영됨 상태) -->
+    <!-- 🔥 모델 초대형 유지 -->
     <a-entity 
       gltf-model="model.glb"
       position="0 0 -3" 
