@@ -2,13 +2,13 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>GLB 모델 초초초대형 + 카메라 뒤로</title>
+  <title>GLB 모델 초대형 + 카메라 뒤로</title>
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
 </head>
 <body>
   <a-scene>
     
-    <!-- ===== 카메라 (모델 초대형 유지, 카메라만 Z축 10 뒤로 이동) ===== -->
+    <!-- ===== 카메라 (모델 유지, Z축 10 뒤로 이동) ===== -->
     <a-entity id="rig" position="0 1.6 15">
       <a-camera wasd-controls look-controls></a-camera>
       <a-entity laser-controls="hand: left"></a-entity>
@@ -31,11 +31,11 @@
     <a-light type="directional" position="200 400 200" intensity="1"></a-light>
 
     <!-- ===== GLB 모델 ===== -->
-    <!-- 🔥 모델 초초초대형 유지 (2,400,000배) -->
+    <!-- 🔥 모델만 400,000배 확대 -->
     <a-entity 
       gltf-model="model.glb"
       position="0 0 -3" 
-      scale="2400000 2400000 2400000"
+      scale="400000 400000 400000"
       rotation="0 30 0">
     </a-entity>
 
